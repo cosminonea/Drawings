@@ -3,6 +3,10 @@ namespace Drawings.Core
     using System.Collections.Generic;
     using System.IO;
 
+    // I chose simple inheritance over composition 
+    // as it was the simplest possible solution given the requirements
+    // if the domain changes in the future a refactoring of the design 
+    // will be required 
     public class Drawing
     {
         #region Constants and Fields
