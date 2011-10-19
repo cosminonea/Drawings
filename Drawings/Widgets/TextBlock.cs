@@ -2,16 +2,40 @@ namespace Drawings.Widgets
 {
     using Drawings.Core;
 
-    public class TextBlock : Widget
+    // I chose inheritance here but it 
+    // could really work using aggregation where the TextBlock
+    // encapsulates a Rectangle and decorates it with text printing functionality
+    public class TextBlock : Rectangle
     {
-        private readonly Rectangle rectangle;
+        #region Constants and Fields
 
         private readonly string text;
 
-        public TextBlock(Rectangle rectangle, string text)
+        #endregion
+
+        #region Constructors and Destructors
+
+        public TextBlock(Location location, int width, int height, string text)
+            : base(location, width, height)
         {
-            this.rectangle = rectangle;
             this.text = text;
         }
+
+        #endregion
+
+        #region Public Methods
+
+        public override string Print()
+        {
+            return string.Format(
+                "TextBlock ({0},{1})  width = {2} height = {3} text=\"{4}\" ", 
+                Location.X, 
+                Location.X, 
+                Width, 
+                Height, 
+                text);
+        }
+
+        #endregion
     }
 }

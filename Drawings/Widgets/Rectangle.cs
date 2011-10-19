@@ -4,16 +4,32 @@ namespace Drawings.Widgets
 
     public class Rectangle : Widget
     {
-        private readonly int width;
+        #region Constants and Fields
 
-        private readonly int height;
+        protected readonly int Height;
 
-        public Rectangle(int width, int height)
+        protected readonly int Width;
+
+        #endregion
+
+        #region Constructors and Destructors
+
+        public Rectangle(Location location, int width, int height)
+            : base(location)
         {
-            this.width = width;
-            this.height = height;
+            Width = width;
+            Height = height;
         }
 
+        #endregion
 
+        #region Public Methods
+
+        public override string Print()
+        {
+            return string.Format("Rectangle ({0},{1}) width = {2} height = {3} ", Location.X, Location.Y, Width, Height);
+        }
+
+        #endregion
     }
 }

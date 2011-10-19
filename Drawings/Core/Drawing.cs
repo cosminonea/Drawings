@@ -1,12 +1,44 @@
 namespace Drawings.Core
 {
-    using System.Drawing;
+    using System.Collections.Generic;
+    using System.IO;
 
     public class Drawing
     {
-        public void AddWidget(Point point, Widget widget)
+        #region Constants and Fields
+
+        private readonly TextWriter textWriter;
+
+        private readonly List<Widget> widgets = new List<Widget>();
+
+        #endregion
+        
+        #region Constructors and Destructors
+
+        // this dependency is here just based on current requirements
+        // for simplicity I am not passing this down to widgets
+        public Drawing(TextWriter textWriter)
         {
-            
+            this.textWriter = textWriter;
         }
+
+        #endregion
+
+        #region Public Methods
+
+        public void AddWidget(Widget widget)
+        {
+            widgets.Add(widget);
+        }
+
+        public void Print()
+        {
+            foreach (Widget widget in widgets)
+            {
+                textWriter.WriteLine(widget.Print());
+            }
+        }
+
+        #endregion
     }
 }

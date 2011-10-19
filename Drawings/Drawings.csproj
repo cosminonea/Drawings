@@ -36,7 +36,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,6 +48,7 @@
     <Compile Include="Widgets\Ellipse.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Core\Location.cs" />
     <Compile Include="Widgets\Rectangle.cs" />
     <Compile Include="Widgets\Square.cs" />
     <Compile Include="Widgets\TextBlock.cs" />
