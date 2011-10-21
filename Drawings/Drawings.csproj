@@ -43,6 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Renderers\PrinterRenderer.cs" />
+    <Compile Include="Renderers\ConsoleRenderer.cs" />
+    <Compile Include="Core\IGraphicsRenderer.cs" />
     <Compile Include="Widgets\Circle.cs" />
     <Compile Include="Core\Drawing.cs" />
     <Compile Include="Widgets\Ellipse.cs" />

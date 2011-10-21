@@ -1,4 +1,4 @@
-namespace Drawings.Renderer
+namespace Drawings.Renderers
 {
     using System.IO;
 
