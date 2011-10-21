@@ -14,7 +14,8 @@ namespace Drawings.Widgets
 
         #region Constructors and Destructors
 
-        public Ellipse(Location location, int horizontalDiameter, int verticalDiameter) : base(location)
+        public Ellipse(Location location, int horizontalDiameter, int verticalDiameter)
+            : base(location)
         {
             this.horizontalDiameter = horizontalDiameter;
             this.verticalDiameter = verticalDiameter;
@@ -24,14 +25,15 @@ namespace Drawings.Widgets
 
         #region Public Methods
 
-        public override string Print()
+        public override void Print(IGraphicsRenderer graphics)
         {
-            return string.Format(
-                            "Ellipse ({0},{1}) diameterH = {2} diameterV = {3} ",
-                            Location.X,
-                            Location.Y, 
-                            horizontalDiameter, 
-                            verticalDiameter);
+            graphics.PrintText(
+                string.Format(
+                    "Ellipse ({0},{1}) diameterH = {2} diameterV = {3} ", 
+                    Location.X, 
+                    Location.Y, 
+                    horizontalDiameter, 
+                    verticalDiameter));
         }
 
         #endregion

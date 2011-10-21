@@ -25,15 +25,16 @@ namespace Drawings.Widgets
 
         #region Public Methods
 
-        public override string Print()
+        public override void Print(IGraphicsRenderer graphics)
         {
-            return string.Format(
-                "TextBlock ({0},{1})  width = {2} height = {3} text=\"{4}\" ", 
-                Location.X, 
-                Location.X, 
-                Width, 
-                Height, 
-                text);
+            graphics.PrintText(
+                string.Format(
+                    "TextBlock ({0},{1})  width = {2} height = {3} text=\"{4}\" ", 
+                    Location.X, 
+                    Location.X, 
+                    Width, 
+                    Height, 
+                    text));
         }
 
         #endregion

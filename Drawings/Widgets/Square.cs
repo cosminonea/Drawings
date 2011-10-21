@@ -12,7 +12,8 @@ namespace Drawings.Widgets
 
         #region Constructors and Destructors
 
-        public Square(Location location, int width) : base(location)
+        public Square(Location location, int width)
+            : base(location)
         {
             this.width = width;
         }
@@ -21,9 +22,9 @@ namespace Drawings.Widgets
 
         #region Public Methods
 
-        public override string Print()
+        public override void Print(IGraphicsRenderer graphics)
         {
-            return string.Format("Square ({0},{1}) size={2}", Location.X, Location.Y, width);
+            graphics.PrintText(string.Format("Square ({0},{1}) size={2}", Location.X, Location.Y, width));
         }
 
         #endregion

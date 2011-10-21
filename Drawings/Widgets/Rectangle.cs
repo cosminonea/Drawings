@@ -25,9 +25,15 @@ namespace Drawings.Widgets
 
         #region Public Methods
 
-        public override string Print()
+        public override void Print(IGraphicsRenderer graphics)
         {
-            return string.Format("Rectangle ({0},{1}) width = {2} height = {3} ", Location.X, Location.Y, Width, Height);
+            graphics.PrintText(
+                string.Format(
+                    "Rectangle ({0},{1}) width = {2} height = {3} ", 
+                    Location.X, 
+                    Location.Y, 
+                    Width, 
+                    Height));
         }
 
         #endregion

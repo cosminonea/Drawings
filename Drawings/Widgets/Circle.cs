@@ -12,7 +12,8 @@ namespace Drawings.Widgets
 
         #region Constructors and Destructors
 
-        public Circle(Location location, int diameter) : base(location)
+        public Circle(Location location, int diameter)
+            : base(location)
         {
             this.diameter = diameter;
         }
@@ -21,9 +22,9 @@ namespace Drawings.Widgets
 
         #region Public Methods
 
-        public override string Print()
+        public override void Print(IGraphicsRenderer graphics)
         {
-            return string.Format("Circle ({0},{1}) size={2}", Location.X, Location.Y, diameter);
+            graphics.PrintText(string.Format("Circle ({0},{1}) size={2}", Location.X, Location.Y, diameter));
         }
 
         #endregion

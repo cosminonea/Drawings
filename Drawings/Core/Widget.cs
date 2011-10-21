@@ -8,11 +8,11 @@ namespace Drawings.Core
 
         #endregion
 
-        #region Constructors and Destructors
-
         // a widget also contains its location 
         // which would be needed in a real life scenario 
         // for the widget to draw itself at the specified location
+        #region Constructors and Destructors
+
         protected Widget(Location location)
         {
             Location = location;
@@ -25,7 +25,7 @@ namespace Drawings.Core
         // as a default implementation
         #region Public Methods
 
-        public abstract string Print();
+        public abstract void Print(IGraphicsRenderer graphics);
 
         #endregion
     }
